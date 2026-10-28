@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tca-deploy
+  name: tca-deploy
+  namespace: tca-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tca-deploy
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: tca-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
