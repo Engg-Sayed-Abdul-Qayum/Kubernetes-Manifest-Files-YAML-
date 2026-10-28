@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: tca-pod
+  name: tca-pod
+  namespace: tca-ns
+spec:
+  containers:
+  - image: nginx
+    name: tca-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
