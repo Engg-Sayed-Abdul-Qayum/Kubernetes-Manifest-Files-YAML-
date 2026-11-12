@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check Docker service
+sudo systemctl status docker
+
+# Check whether Jenkins user exists
+id jenkins
+
+# Add Jenkins user to Docker group
+sudo usermod -aG docker jenkins
+
+# Restart Jenkins
+sudo systemctl restart jenkins
+
+# Restart Docker
+sudo systemctl restart docker
+
+# Verify Docker access for Jenkins
+sudo -u jenkins -H docker version
